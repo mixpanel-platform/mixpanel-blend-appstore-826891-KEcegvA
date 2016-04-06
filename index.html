@@ -655,7 +655,7 @@
           _.each(_.values(results.values()), function(value){
               events.push(value);
           })
-          events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9]]
+          events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9],events[10],events[11],events[12],events[13],events[14],events[15],events[16],events[17],events[18],events[19]]
           var monthlyQuery = MP.api.query('/api/2.0/events/', {event:events, unit: 'month', union: 1, type:'unique'}, {dataType: 'json'}) 
           monthlyQuery.done(function(json){
               //console.log(json)
@@ -696,7 +696,7 @@
             _.each(_.values(results.values()), function(value){
               events.push(value);
             })
-            events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9]]
+            events = events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9],events[10],events[11],events[12],events[13],events[14],events[15],events[16],events[17],events[18],events[19]]
             var placeholderObject = {}
             var placeholderArray = []
             var monthlyUniquesYAxis =[]
@@ -793,7 +793,7 @@
           _.each(_.values(results.values()), function(value){
             events.push(value);
           })
-          events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9]]
+          events = events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9],events[10],events[11],events[12],events[13],events[14],events[15],events[16],events[17],events[18],events[19]]
           var weeklyUniquesYAxisPlaceholder =[]
           var weeklyUniquesYAxis =[]
           var weeklyUniquesXAxis =[]
@@ -893,7 +893,7 @@
           _.each(_.values(results.values()), function(value){
             events.push(value);
           })
-          events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9]]
+          events = events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9],events[10],events[11],events[12],events[13],events[14],events[15],events[16],events[17],events[18],events[19]]
           // Uniques for this month
           var lastMonthUniques = []
           var lastMonthForMauOverDAU = MP.api.query('/api/2.0/events/', {event:events, from:moment().subtract(1,'month').startOf('month'), to:moment().subtract(1,'month').endOf('month'), unit: 'month', union: 1, type:'unique'}, {dataType: 'json'})
@@ -995,7 +995,7 @@
           _.each(_.values(results.values()), function(value){
             events.push(value);
           })
-          events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9]]
+          events = events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9],events[10],events[11],events[12],events[13],events[14],events[15],events[16],events[17],events[18],events[19]]
           // Uniques for this month
           var thisMonthUniques = []
           var monthlyForMauOverDAU = MP.api.query('/api/2.0/events/', {event:events, from:moment().subtract(1,'month').startOf('month'), to:moment().subtract(1,'month').endOf('month'), unit: 'month', union: 1, type:'unique'}, {dataType: 'json'})
