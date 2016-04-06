@@ -1084,15 +1084,7 @@
       }
 
 
-      topbarQuery();
-      newUsersToday();
-      weeklyNewUsersQuery();
-      monthlyNewUsersQuery();
-      topEventsQuery()
-      monthlyQuery()
-      weeklyQuery()
-      dauOverMausQueryLastMonth()
-      dauOverMausQueryThisMonth()
+      
       
 
       //formatting stuff for topbar
@@ -1404,8 +1396,18 @@
               }
           }
         });
-
-
+      
+      $(document).ready(function () {
+        topbarQuery();
+        newUsersToday();
+        weeklyNewUsersQuery();
+        monthlyNewUsersQuery();
+        topEventsQuery()
+        monthlyQuery()
+        weeklyQuery()
+        dauOverMausQueryLastMonth()
+        dauOverMausQueryThisMonth()
+      })
       
     </script>
 
