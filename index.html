@@ -655,6 +655,7 @@
           _.each(_.values(results.values()), function(value){
               events.push(value);
           })
+          events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9]]
           var monthlyQuery = MP.api.query('/api/2.0/events/', {event:events, unit: 'month', union: 1, type:'unique'}, {dataType: 'json'}) 
           monthlyQuery.done(function(json){
               //console.log(json)
@@ -695,6 +696,7 @@
             _.each(_.values(results.values()), function(value){
               events.push(value);
             })
+            events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9]]
             var placeholderObject = {}
             var placeholderArray = []
             var monthlyUniquesYAxis =[]
@@ -791,6 +793,7 @@
           _.each(_.values(results.values()), function(value){
             events.push(value);
           })
+          events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9]]
           var weeklyUniquesYAxisPlaceholder =[]
           var weeklyUniquesYAxis =[]
           var weeklyUniquesXAxis =[]
@@ -890,6 +893,7 @@
           _.each(_.values(results.values()), function(value){
             events.push(value);
           })
+          events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9]]
           // Uniques for this month
           var lastMonthUniques = []
           var lastMonthForMauOverDAU = MP.api.query('/api/2.0/events/', {event:events, from:moment().subtract(1,'month').startOf('month'), to:moment().subtract(1,'month').endOf('month'), unit: 'month', union: 1, type:'unique'}, {dataType: 'json'})
@@ -991,6 +995,7 @@
           _.each(_.values(results.values()), function(value){
             events.push(value);
           })
+          events = [events[0],events[1],events[2],events[3],events[4],events[5],events[6],events[7],events[8],events[9]]
           // Uniques for this month
           var thisMonthUniques = []
           var monthlyForMauOverDAU = MP.api.query('/api/2.0/events/', {event:events, from:moment().subtract(1,'month').startOf('month'), to:moment().subtract(1,'month').endOf('month'), unit: 'month', union: 1, type:'unique'}, {dataType: 'json'})
@@ -1083,18 +1088,6 @@
         })  
       }
 
-
-      topbarQuery();
-      newUsersToday();
-      weeklyNewUsersQuery();
-      monthlyNewUsersQuery();
-      topEventsQuery()
-      monthlyQuery()
-      weeklyQuery()
-      dauOverMausQueryLastMonth()
-      dauOverMausQueryThisMonth()
-      
-
       //formatting stuff for topbar
       function pad(d) {
           return (d < 10) ? '0' + d.toString() : d.toString();
@@ -1135,12 +1128,22 @@
       //refresh top bar
       setInterval(topbarQuery, 2400000);
 
+      topbarQuery();
+      newUsersToday();
+      weeklyNewUsersQuery();
+      monthlyNewUsersQuery();
+      topEventsQuery()
+      monthlyQuery()
+      weeklyQuery()
+      dauOverMausQueryLastMonth()
+      dauOverMausQueryThisMonth()
+
 
 
       
     </script>
 
-  </div>
+
   </body>
 </html>
 
