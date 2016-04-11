@@ -613,7 +613,7 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
 
     <script>
 
-
+       MP.api.setCredentials("0d4eaad557622208b4dcdcb1d035aecf")
       //setting some global variables
       //weekly active(uniques) and weekly new users
       var xAxisWeeklyActive = []
@@ -900,11 +900,6 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
               $.each(results, function(index, value){
                 monthlyNewUserData.push(value.value)
               })
-              console.log(monthlyNewUserxAxis)
-              console.log(monthlyNewUserData)
-
-              // monthlyNewUserxAxis = [monthlyNewUserxAxis[3],monthlyNewUserxAxis[4],monthlyNewUserxAxis[5],monthlyNewUserxAxis[6],monthlyNewUserxAxis[7],monthlyNewUserxAxis[8]]
-              // monthlyNewUserData = [monthlyNewUserData[3],monthlyNewUserData[4],monthlyNewUserData[5],monthlyNewUserData[6],monthlyNewUserData[7],monthlyNewUserData[8]]
 
               $('#monthlyNewUsers').highcharts({
                         title: {
@@ -929,24 +924,31 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
               });
               
               //do math to figure out new/active users for the month
-              if(monthlyNewUserxAxis.length === 6){
-                data = [(monthlyNewUserData[0]/monthlyUniquesYAxis[0]),(monthlyNewUserData[1]/monthlyUniquesYAxis[1]),(monthlyNewUserData[2]/monthlyUniquesYAxis[2]),(monthlyNewUserData[3]/monthlyUniquesYAxis[3]),(monthlyNewUserData[4]/monthlyUniquesYAxis[4]),(monthlyNewUserData[5]/monthlyUniquesYAxis[5])]
+              
+              var numOfMonths = monthlyNewUserxAxis.length
+              var uniquesLenght = monthlyUniquesYAxis.length
+              console.log(numOfMonths)
+              if(monthlyNewUserxAxis.length >= 6){
+                data = [(monthlyNewUserData[(numOfMonths-6)]/monthlyUniquesYAxis[(uniquesLenght-6)]),(monthlyNewUserData[(numOfMonths-5)]/monthlyUniquesYAxis[(uniquesLenght-5)]),(monthlyNewUserData[(numOfMonths-4)]/monthlyUniquesYAxis[(uniquesLenght-4)]),(monthlyNewUserData[(numOfMonths-3)]/monthlyUniquesYAxis[(uniquesLenght-3)]),(monthlyNewUserData[(numOfMonths-2)]/monthlyUniquesYAxis[(uniquesLenght-2)]),(monthlyNewUserData[(numOfMonths-1)]/monthlyUniquesYAxis[(uniquesLenght-1)])]
+                monthlyNewUserxAxis =[monthlyNewUserxAxis[(numOfMonths-6)],monthlyNewUserxAxis[(numOfMonths-5)],monthlyNewUserxAxis[(numOfMonths-4)],monthlyNewUserxAxis[(numOfMonths-3)],monthlyNewUserxAxis[(numOfMonths-2)],monthlyNewUserxAxis[(numOfMonths-1)]]
+                
               }else if(monthlyNewUserxAxis.length === 5){
                 data = [(monthlyNewUserData[0]/monthlyUniquesYAxis[0]),(monthlyNewUserData[1]/monthlyUniquesYAxis[1]),(monthlyNewUserData[2]/monthlyUniquesYAxis[2]),(monthlyNewUserData[3]/monthlyUniquesYAxis[3]),(monthlyNewUserData[4]/monthlyUniquesYAxis[4])]
+                monthlyNewUserxAxis = [monthlyNewUserxAxis[(numOfMonths-5)],monthlyNewUserxAxis[(numOfMonths-4)],monthlyNewUserxAxis[(numOfMonths-3)],monthlyNewUserxAxis[(numOfMonths-2)],monthlyNewUserxAxis[(numOfMonths-1)]]
               }else if(monthlyNewUserxAxis.length === 4){
                 data = [(monthlyNewUserData[0]/monthlyUniquesYAxis[0]),(monthlyNewUserData[1]/monthlyUniquesYAxis[1]),(monthlyNewUserData[2]/monthlyUniquesYAxis[2]),(monthlyNewUserData[3]/monthlyUniquesYAxis[3])]
+                monthlyNewUserxAxis =[monthlyNewUserxAxis[(numOfMonths-4)],monthlyNewUserxAxis[(numOfMonths-3)],monthlyNewUserxAxis[(numOfMonths-2)],monthlyNewUserxAxis[(numOfMonths-1)]]
               }else if(monthlyNewUserxAxis.length === 3){
                 data = [(monthlyNewUserData[0]/monthlyUniquesYAxis[0]),(monthlyNewUserData[1]/monthlyUniquesYAxis[1]),(monthlyNewUserData[2]/monthlyUniquesYAxis[2])]
+                monthlyNewUserxAxis =[monthlyNewUserxAxis[(numOfMonths-3)],monthlyNewUserxAxis[(numOfMonths-2)],monthlyNewUserxAxis[(numOfMonths-1)]]
               }else if(monthlyNewUserxAxis.length === 2){
                 data = [(monthlyNewUserData[0]/monthlyUniquesYAxis[0]),(monthlyNewUserData[1]/monthlyUniquesYAxis[1])]
+                monthlyNewUserxAxis =[monthlyNewUserxAxis[(numOfMonths-2)],monthlyNewUserxAxis[(numOfMonths-1)]]
               }else if(monthlyNewUserxAxis.length === 1){
                 data = [(monthlyNewUserData[0]/monthlyUniquesYAxis[0])]
+                monthlyNewUserxAxis =[monthlyNewUserxAxis[(numOfMonths-1)]]
               }else{}
-
-              console.log(monthlyNewUserxAxis) 
-              console.log(monthlyNewUserData)
-              console.log(monthlyUniquesYAxis)
-              console.log(data)             
+             
               $('#MonthlyActiveAndNewPercentage').highcharts({
                       title: {
                           text: 'New Monthly Users Over Monthly Active User'
@@ -1155,9 +1157,6 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
                   for (var i =0; i < results.length; i++) { 
                     dayOfWeek = moment(results[i].key[0]).day()
 
-                    console.log(results.length)
-
-                    console.log(monthlyresults)
                     if (weekinMonth === 1) {
                       if(dayOfWeek === 0){
                         weekOneArray[6] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
@@ -1313,11 +1312,6 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
                 */
                 for (var i =0; i < dauThisMonthresults.length; i++) { 
                   dayOfWeekThisMonth = moment(dauThisMonthresults[i].key[0]).day() 
-
-                  console.log(dauThisMonthresults[i].key[0])
-                  console.log(dayOfWeekThisMonth)
-                  console.log(dauThisMonthresults[i])
-
                   if (weekinMonthThisMonth === 1) {
 
                     if(dayOfWeekThisMonth === 0){
@@ -1454,8 +1448,8 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
                     },
                 });
                 })
-                var email = mixpanel.cookie.props.Email
-                mixpanel.track("MPPlatform: custom report load time",{"SubName":"SE Dashboard","Author":"Bo","Version":"1","Email": email});
+
+                mixpanel.track("MPPlatform: custom report load time",{"SubName":"SE Dashboard","Author":"Bo","Version":"1"});
                 
               })            
           })      
@@ -1521,8 +1515,7 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
 
       $(document).ready(function() {
         allQueries()
-        var email = mixpanel.cookie.props.Email
-        mixpanel.track("MPPlatform: custom report viewed",{"SubName":"SE Dashboard","Author":"Bo","Version":"1","Email": email})
+        mixpanel.track("MPPlatform: custom report viewed",{"SubName":"SE Dashboard","Author":"Bo","Version":"1"})
         mixpanel.time_event("MPPlatform: custom report load time");
       })
 
