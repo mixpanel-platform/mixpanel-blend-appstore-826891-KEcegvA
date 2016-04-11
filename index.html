@@ -900,6 +900,8 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
               $.each(results, function(index, value){
                 monthlyNewUserData.push(value.value)
               })
+              console.log(monthlyNewUserxAxis)
+              console.log(monthlyNewUserData)
 
               // monthlyNewUserxAxis = [monthlyNewUserxAxis[3],monthlyNewUserxAxis[4],monthlyNewUserxAxis[5],monthlyNewUserxAxis[6],monthlyNewUserxAxis[7],monthlyNewUserxAxis[8]]
               // monthlyNewUserData = [monthlyNewUserData[3],monthlyNewUserData[4],monthlyNewUserData[5],monthlyNewUserData[6],monthlyNewUserData[7],monthlyNewUserData[8]]
@@ -927,6 +929,7 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
               });
               
               //do math to figure out new/active users for the month
+              $.each()
               data = [(monthlyNewUserData[0]/monthlyUniquesYAxis[0]),(monthlyNewUserData[1]/monthlyUniquesYAxis[1]),(monthlyNewUserData[2]/monthlyUniquesYAxis[2]),(monthlyNewUserData[3]/monthlyUniquesYAxis[3]),(monthlyNewUserData[4]/monthlyUniquesYAxis[4]),(monthlyNewUserData[5]/monthlyUniquesYAxis[5])]
               console.log(monthlyNewUserxAxis) 
               console.log(monthlyNewUserData)
