@@ -862,9 +862,7 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
             $.each(results, function(index, value){
               monthlyUniquesYAxis.push(value.value)
             })
-            
-            // monthlyUniquesXAxis = [results[0].key[0],results[1].key[0],results[2].key[0],results[3].key[0],results[4].key[0],results[5].key[0]]
-            // monthlyUniquesYAxis = [results[0].value,results[1].value,results[2].value,results[3].value,results[4].value,results[5].value]
+
             $('#monthlyActiveUsers').highcharts({
                 title: {
                     text: 'Monthly Active Users'
@@ -903,8 +901,8 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
                 monthlyNewUserData.push(value.value)
               })
 
-              monthlyNewUserxAxis = [monthlyNewUserxAxis[3],monthlyNewUserxAxis[4],monthlyNewUserxAxis[5],monthlyNewUserxAxis[6],monthlyNewUserxAxis[7],monthlyNewUserxAxis[8]]
-              monthlyNewUserData = [monthlyNewUserData[3],monthlyNewUserData[4],monthlyNewUserData[5],monthlyNewUserData[6],monthlyNewUserData[7],monthlyNewUserData[8]]
+              // monthlyNewUserxAxis = [monthlyNewUserxAxis[3],monthlyNewUserxAxis[4],monthlyNewUserxAxis[5],monthlyNewUserxAxis[6],monthlyNewUserxAxis[7],monthlyNewUserxAxis[8]]
+              // monthlyNewUserData = [monthlyNewUserData[3],monthlyNewUserData[4],monthlyNewUserData[5],monthlyNewUserData[6],monthlyNewUserData[7],monthlyNewUserData[8]]
 
               $('#monthlyNewUsers').highcharts({
                         title: {
