@@ -1521,7 +1521,7 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
 
       $(document).ready(function() {
         allQueries()
-        mixpanel.track("MPPlatform: custom report viewed",{"SubName":"SE Dashboard","Author":"Bo","Version":"1"})
+        mixpanel.track("MPPlatform: custom report viewed",{"SubName":"SE Dashboard","Author":"Bo","Version":"1","Email":mixpanel.cookie.props.Email})
         mixpanel.time_event("MPPlatform: custom report load time");
       })
 
