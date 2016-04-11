@@ -1446,6 +1446,12 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
         dauOverMausQuery()
         topEventsQuery()
 
+        //refresh top bar
+        setInterval(dailyActivesQuery, 600000);
+        setInterval(newUsersToday, 1860000);
+        setInterval(monthlyQuery, 1920000);
+        setInterval(weeklyQuery, 1980000);
+
         
       }
       
@@ -1496,12 +1502,7 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
         mixpanel.time_event("MPPlatform: custom report load time");
       })
 
-      //refresh top bar
-      setInterval(dailyActivesQuery, 600000);
-      setInterval(newUsersToday, 1860000);
-      setInterval(monthlyQuery, 1920000);
-      setInterval(weeklyQuery, 1980000);
-
+      
      
 
 
