@@ -855,8 +855,16 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
             var monthlyActivesToday =  results[monthlyActivesTopBar].value
             $('.monthly-actives').text(addCommas(monthlyActivesToday));
 
-            monthlyUniquesXAxis = [results[0].key[0],results[1].key[0],results[2].key[0],results[3].key[0],results[4].key[0],results[5].key[0]]
-            monthlyUniquesYAxis = [results[0].value,results[1].value,results[2].value,results[3].value,results[4].value,results[5].value]
+             $.each(results, function(index, value){
+              monthlyUniquesXAxis.push(value.key[0])
+            })
+            var weeklyNewUseryAxis =[]
+            $.each(results, function(index, value){
+              monthlyUniquesYAxis.push(value.value)
+            })
+            
+            // monthlyUniquesXAxis = [results[0].key[0],results[1].key[0],results[2].key[0],results[3].key[0],results[4].key[0],results[5].key[0]]
+            // monthlyUniquesYAxis = [results[0].value,results[1].value,results[2].value,results[3].value,results[4].value,results[5].value]
             $('#monthlyActiveUsers').highcharts({
                 title: {
                     text: 'Monthly Active Users'
@@ -967,8 +975,6 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
           // 12 week query for Uniques 
           
           MP.api.custom_query(newWeeklyActiveUsersScript).done(function(results) {
-            console.log(results)
-
             $.each(results, function(index, value){
               weeklyUniquesXAxis.push(value.key[0])
             })
@@ -976,16 +982,6 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
             $.each(results, function(index, value){
               weeklyUniquesYAxis.push(value.value)
             })
-            console.log(weeklyUniquesYAxis)
-            console.log(weeklyUniquesXAxis)
-            // if(results.length < 13){
-            //   var arraylength = results.length
-            //    weeklyUniquesYAxis = [results[(arraylength-11)].value,results[(arraylength-10)].value,results[(arraylength-9)].value,results[(arraylength-8)].value,results[(arraylength-7)].value,results[(arraylength-6)].value,results[(arraylength-5)].value,results[(arraylength-4)].value,results[(arraylength-3)].value,results[(arraylength-2)].value,results[(arraylength-1)].value]
-            // weeklyUniquesXAxis = [results[1].key[0],results[2].key[0],results[3].key[0],results[4].key[0],results[5].key[0],results[6].key[0],results[7].key[0],results[8].key[0],results[9].key[0],results[10].key[0],results[11].key[0]]
-            // }else{
-            // weeklyUniquesYAxis = [results[1].value,results[2].value,results[3].value,results[4].value,results[5].value,results[6].value,results[7].value,results[8].value,results[9].value,results[10].value,results[11].value,results[12].value]
-            // weeklyUniquesXAxis = [results[1].key[0],results[2].key[0],results[3].key[0],results[4].key[0],results[5].key[0],results[6].key[0],results[7].key[0],results[8].key[0],results[9].key[0],results[10].key[0],results[11].key[0],results[12].key[0]]}
-            
 
             $('#weeklyActiveUsers').highcharts({
               title: {
