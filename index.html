@@ -968,12 +968,13 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
           
           MP.api.custom_query(newWeeklyActiveUsersScript).done(function(results) {
             console.log(results)
-            
-            _.each(results, function(e) {
-              weeklyUniquesYAxis.push(e.key[0])
+
+            $.each(results, function(index, value){
+              weeklyUniquesXAxis.push(value.key[0])
             })
-            _.each(results, function(e){
-              weeklyUniquesXAxis.push(e.value)
+            var weeklyNewUseryAxis =[]
+            $.each(results, function(index, value){
+              weeklyUniquesYAxis.push(value.value)
             })
             console.log(weeklyUniquesYAxis)
             console.log(weeklyUniquesXAxis)
