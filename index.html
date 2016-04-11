@@ -1454,8 +1454,8 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
                     },
                 });
                 })
-                
-                mixpanel.track("MPPlatform: custom report load time",{"SubName":"SE Dashboard","Author":"Bo","Version":"1"});
+                var email = mixpanel.cookie.props.Email
+                mixpanel.track("MPPlatform: custom report load time",{"SubName":"SE Dashboard","Author":"Bo","Version":"1","Email": email});
                 
               })            
           })      
@@ -1521,7 +1521,8 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
 
       $(document).ready(function() {
         allQueries()
-        mixpanel.track("MPPlatform: custom report viewed",{"SubName":"SE Dashboard","Author":"Bo","Version":"1","Email":mixpanel.cookie.props.Email})
+        var email = mixpanel.cookie.props.Email
+        mixpanel.track("MPPlatform: custom report viewed",{"SubName":"SE Dashboard","Author":"Bo","Version":"1","Email": email})
         mixpanel.time_event("MPPlatform: custom report load time");
       })
 
