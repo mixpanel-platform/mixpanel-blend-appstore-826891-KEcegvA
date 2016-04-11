@@ -900,6 +900,11 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
               $.each(results, function(index, value){
                 monthlyNewUserData.push(value.value)
               })
+              var a = monthlyNewUserxAxis.length
+              var b = monthlyNewUserData.length
+
+              monthlyNewUserxAxis = [monthlyNewUserxAxis[(a-6)],monthlyNewUserxAxis[(a-5)],monthlyNewUserxAxis[(a-4)],monthlyNewUserxAxis[(a-3)],monthlyNewUserxAxis[(a-2)],monthlyNewUserxAxis[(a-1)]] 
+              monthlyNewUserData =  [monthlyNewUserData[(b-6)],monthlyNewUserData[(b-5)],monthlyNewUserData[(b-4)],monthlyNewUserData[(b-3)],monthlyNewUserData[(b-2)],monthlyNewUserData[(b-1)]] 
 
               $('#monthlyNewUsers').highcharts({
                         title: {
