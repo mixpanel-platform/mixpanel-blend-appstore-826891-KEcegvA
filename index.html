@@ -1154,8 +1154,8 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
                   for (var i =0; i < results.length; i++) { 
                     dayOfWeek = moment(results[i].key[0]).day()
 
+                    console.log(results.length)
                     if (weekinMonth === 1) {
-
                       if(dayOfWeek === 0){
                         weekOneArray[6] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
                       }else if(dayOfWeek === 1){
