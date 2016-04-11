@@ -1147,6 +1147,7 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
                  //set variables for week and days
                 var dayOfWeek 
                 var weekinMonth = 1
+                var numOfMonths = monthlyresults.length
                 /*
                 need to find beginning of the month and day of week (sat, sun, thurs) for xAxis, then count to sunday, when sunday increment the week up one.
                 Additionally need to place each day's dau's in approiate day of week, and week in month slot
@@ -1155,90 +1156,91 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
                     dayOfWeek = moment(results[i].key[0]).day()
 
                     console.log(results.length)
+
                     console.log(monthlyresults)
                     if (weekinMonth === 1) {
                       if(dayOfWeek === 0){
-                        weekOneArray[6] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekOneArray[6] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 1){
-                        weekOneArray[0] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekOneArray[0] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 2){
-                        weekOneArray[1] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekOneArray[1] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 3){
-                        weekOneArray[2] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekOneArray[2] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 4){
-                        weekOneArray[3] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekOneArray[3] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 5){
-                        weekOneArray[4] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekOneArray[4] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 6){
-                        weekOneArray[5] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekOneArray[5] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else{}
                     } else if (weekinMonth === 2) {
 
                       if(dayOfWeek === 0){
-                        weekTwoArray[6] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekTwoArray[6] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 1){
-                        weekTwoArray[0] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekTwoArray[0] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 2){
-                        weekTwoArray[1] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekTwoArray[1] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 3){
-                        weekTwoArray[2] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekTwoArray[2] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 4){
-                        weekTwoArray[3] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekTwoArray[3] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 5){
-                        weekTwoArray[4] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekTwoArray[4] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 6){
-                        weekTwoArray[5] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekTwoArray[5] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else{}
                     }else if (weekinMonth === 3) {
 
                       if(dayOfWeek === 0){
-                        weekThreeArray[6] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekThreeArray[6] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 1){
-                        weekThreeArray[0] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekThreeArray[0] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 2){
-                        weekThreeArray[1] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekThreeArray[1] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 3){
-                        weekThreeArray[2] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekThreeArray[2] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 4){
-                        weekThreeArray[3] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekThreeArray[3] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 5){
-                        weekThreeArray[4] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekThreeArray[4] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 6){
-                        weekThreeArray[5] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekThreeArray[5] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else{}
                     }else if (weekinMonth === 4) {
 
                       if(dayOfWeek === 0){
-                        weekFourArray[6] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFourArray[6] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 1){
-                        weekFourArray[0] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFourArray[0] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 2){
-                        weekFourArray[1] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFourArray[1] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 3){
-                        weekFourArray[2] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFourArray[2] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 4){
-                        weekFourArray[3] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFourArray[3] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 5){
-                        weekFourArray[4] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFourArray[4] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 6){
-                        weekFourArray[5] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFourArray[5] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else{}
                     }else if(weekinMonth === 5){
     
                       if(dayOfWeek === 0){
-                        weekFiveArray[6] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFiveArray[6] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 1){
-                        weekFiveArray[0] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFiveArray[0] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 2){
-                        weekFiveArray[1] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFiveArray[1] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 3){
-                        weekFiveArray[2] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFiveArray[2] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 4){
-                        weekFiveArray[3] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFiveArray[3] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 5){
-                        weekFiveArray[4] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFiveArray[4] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else if(dayOfWeek === 6){
-                        weekFiveArray[5] = (((results[i].value/monthlyresults[4].value).toFixed(3))*100)
+                        weekFiveArray[5] = (((results[i].value/monthlyresults[(numOfMonths-2)].value).toFixed(3))*100)
                       }else{}
                     }else{}
                     if (dayOfWeek === 0) {
@@ -1319,87 +1321,87 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
                   if (weekinMonthThisMonth === 1) {
 
                     if(dayOfWeekThisMonth === 0){
-                      weekOneArray[6] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekOneArray[6] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 1){
-                      weekOneArray[0] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekOneArray[0] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 2){
-                      weekOneArray[1] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekOneArray[1] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 3){
-                      weekOneArray[2] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekOneArray[2] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 4){
-                      weekOneArray[3] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekOneArray[3] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 5){
-                      weekOneArray[4] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekOneArray[4] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 6){
-                      weekOneArray[5] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekOneArray[5] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else{}
                   } else if (weekinMonthThisMonth === 2) {
        
                     if(dayOfWeekThisMonth === 0){
-                      weekTwoArray[6] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekTwoArray[6] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 1){
-                      weekTwoArray[0] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekTwoArray[0] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 2){
-                      weekTwoArray[1] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekTwoArray[1] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 3){
-                      weekTwoArray[2] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekTwoArray[2] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 4){
-                      weekTwoArray[3] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekTwoArray[3] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 5){
-                      weekTwoArray[4] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekTwoArray[4] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 6){
-                      weekTwoArray[5] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekTwoArray[5] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else{}
                   }else if (weekinMonthThisMonth === 3) {
 
                     if(dayOfWeekThisMonth === 0){
-                      weekThreeArray[6] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekThreeArray[6] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 1){
-                      weekThreeArray[0] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekThreeArray[0] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 2){
-                      weekThreeArray[1] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekThreeArray[1] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 3){
-                      weekThreeArray[2] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekThreeArray[2] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 4){
-                      weekThreeArray[3] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekThreeArray[3] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 5){
-                      weekThreeArray[4] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekThreeArray[4] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 6){
-                      weekThreeArray[5] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekThreeArray[5] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else{}
                   }else if (weekinMonthThisMonth === 4) {
 
                     if(dayOfWeekThisMonth === 0){
-                      weekFourArray[6] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFourArray[6] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 1){
-                      weekFourArray[0] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFourArray[0] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 2){
-                      weekFourArray[1] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFourArray[1] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 3){
-                      weekFourArray[2] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFourArray[2] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 4){
-                      weekFourArray[3] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFourArray[3] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 5){
-                      weekFourArray[4] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFourArray[4] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 6){
-                      weekFourArray[5] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFourArray[5] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else{}
                   }else if(weekinMonthThisMonth === 5){
 
                     if(dayOfWeekThisMonth === 0){
-                      weekFiveArray[6] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFiveArray[6] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 1){
-                      weekFiveArray[0] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFiveArray[0] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 2){
-                      weekFiveArray[1] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFiveArray[1] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 3){
-                      weekFiveArray[2] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFiveArray[2] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 4){
-                      weekFiveArray[3] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFiveArray[3] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 5){
-                      weekFiveArray[4] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFiveArray[4] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else if(dayOfWeekThisMonth === 6){
-                      weekFiveArray[5] = (((dauThisMonthresults[i].value/monthlyresults[5].value).toFixed(3))*100)
+                      weekFiveArray[5] = (((dauThisMonthresults[i].value/monthlyresults[(numOfMonths-1)].value).toFixed(3))*100)
                     }else{}
                   }else{}
                   if (dayOfWeekThisMonth === 0) {
