@@ -1013,12 +1013,19 @@ mixpanel.init("metrics-1");</script><!-- end Mixpanel -->
           
           MP.api.custom_query(newWeeklyActiveUsersScript).done(function(results) {
             $.each(results, function(index, value){
-              weeklyUniquesXAxis.push(value.key[0])
+              if (value.key[0] !== null) {
+                console.log(value)
+                weeklyUniquesXAxis.push(value.key[0])
+              }
             })
             var weeklyNewUseryAxis =[]
             $.each(results, function(index, value){
-              weeklyUniquesYAxis.push(value.value)
+              if (value.key[0] !== null) {
+               weeklyUniquesYAxis.push(value.value)
+              }
             })
+            console.log(weeklyUniquesXAxis)
+            console.log(weeklyUniquesXAxis.length)
 
             $('#weeklyActiveUsers').highcharts({
               title: {
